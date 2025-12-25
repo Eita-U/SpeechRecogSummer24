@@ -22,3 +22,6 @@ Primary developer:
 - Implemented language-specific handling for English and Japanese
 - Added summarization using Hugging Face Transformers
 - Developed Flask web interface for user interaction
+
+## Security / Notes
+- Provide your own Hugging Face access token

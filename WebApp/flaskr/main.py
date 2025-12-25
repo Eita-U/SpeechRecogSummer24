@@ -10,6 +10,9 @@ import os
 
 transcriptString = ''
 
+#  Provide your own Hugging Face access token
+access_token = ''
+
 ### Transcription section
 def performASR(filename, numSpeakers):
     # set up
@@ -39,7 +42,7 @@ def performASR(filename, numSpeakers):
 
     # audio diarization
     # provide a user authorization token to "auth_token"
-    diarize_model = whisperx.DiarizationPipeline(use_auth_token="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", device=device)
+    diarize_model = whisperx.DiarizationPipeline(use_auth_token=access_token, device=device)
     diarize_segments = diarize_model(audio, num_speakers=numSpeakers)
     # print(diarize_segments.speaker.unique())
 
@@ -162,3 +165,4 @@ def summarization():
         'summary.html',
         summary = summary
     )
+
